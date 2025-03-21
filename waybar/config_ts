@@ -1,0 +1,55 @@
+{
+  "layer": "bottom",
+  "position": "bottom",
+  "height": 24,
+  "spacing": 5,
+  "modules-left": ["sway/workspaces","sway/mode"],
+  "modules-center": ["custom/classification","custom/sf"],
+  "modules-right": ["backlight","pulseaudio","cpu","memory","network","battery","clock","tray"],
+  "custom/classification": {
+  	"format": "TRES SECRET"
+  },
+  "backlight": {
+	"format": "{percent}% {icon}",
+	"format-icons": ["\uf185"]
+  },
+  "pulseaudio": { 
+  	"format": "{volume}% {icon}", 
+  	"format-icons": { 
+    		"default": ["\uf026", "\uf027", "\uf028"] 
+  	}
+  },
+  "clock": {
+  	"format": "{:%d/%m/%Y %H:%M}"
+  },
+  "cpu": { 
+    "interval": 10, 
+    "format": "CPU: {usage}%" 
+  },
+  "memory": {
+    "interval": 10,
+    "format": "RAM: {used:0.1f}G"
+  },
+  "network": {
+        "format": "{ipaddr} {icon}",
+        "format-icons": ["\uf6ff"],
+        "tooltip-format": "{ifname}: {ipaddr}"
+  },
+  "battery": {
+	"interval": 60,
+	"states": {
+	    "good": 95,
+	    "warning": 30,
+	    "critical": 15
+	},
+	"format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% {icon} (charging)",
+        "format-plugged": "{capacity}% {icon} (plugged)",
+	"format-icons": ["\uf244","\uf243","\uf242","\uf241","\uf240"],
+	"max-length": 20
+  },
+  "tray": {
+    "icon-size": 20,
+    "spacing": 10
+  }
+}
